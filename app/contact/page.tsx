@@ -21,20 +21,21 @@ export default function ContactPage() {
   };
 
   return (
-    <section className="w-full py-16 md:py-24">
-      <Container size="md">
+    <section className="w-full flex-1 flex flex-col py-8 md:py-10">
+      <Container size="md" className="flex-1 flex flex-col">
 
         {/* Header */}
-        <FadeIn className="mb-14 border-b border-border pb-6">
+        <FadeIn className="mb-8 pb-4">
           <p className="font-sans text-[10px] uppercase tracking-[0.3em] text-secondary mb-2">
             Inquiries
           </p>
-          <h1 className="font-serif text-5xl md:text-6xl font-semibold text-primary tracking-tight">
+          <h1 className="font-serif text-4xl md:text-5xl font-semibold text-primary tracking-tight">
             Contact
           </h1>
         </FadeIn>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20">
+        {/* Content — flex-1 fills remaining height */}
+        <div className="flex-1 grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-20">
 
           {/* Info panel */}
           <FadeIn direction="left" className="lg:col-span-2 space-y-8">
@@ -57,7 +58,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="text-primary hover:text-accent transition-colors"
                 >
-                  @sohamghosh.art ↗
+                  @sgghshart ↗
                 </a>
               </div>
             )}
@@ -125,7 +126,7 @@ export default function ContactPage() {
                 </Button>
                 {status === 'sent' && (
                   <p className="text-sm text-accent font-light">
-                    Thank you — I'll be in touch soon.
+                    Thank you — I&apos;ll be in touch soon.
                   </p>
                 )}
               </div>

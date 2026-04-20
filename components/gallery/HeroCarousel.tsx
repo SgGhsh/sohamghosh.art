@@ -5,41 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
 import Container from '@/components/ui/Container';
-
-const SLIDES = [
-  {
-    src: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=2000&h=1333&fit=crop',
-    srcMobile: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=800&h=1200&fit=crop',
-    alt: 'Urban Fragments — Abstract urban landscape',
-    title: 'Urban Fragments',
-    meta: 'Oil on Canvas · 120 × 90 cm · 2024',
-    slug: 'urban-fragments',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1578321272176-b7bbc0679853?w=2000&h=1333&fit=crop',
-    srcMobile: 'https://images.unsplash.com/photo-1578321272176-b7bbc0679853?w=800&h=1200&fit=crop',
-    alt: 'Chromatic Dreams — Mixed media canvas',
-    title: 'Chromatic Dreams',
-    meta: 'Mixed Media · 150 × 100 cm · 2023',
-    slug: 'chromatic-dreams',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=2000&h=1333&fit=crop',
-    srcMobile: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=1200&fit=crop',
-    alt: 'Ethereal Landscapes — Watercolor abstract',
-    title: 'Ethereal Landscapes',
-    meta: 'Watercolor on Paper · 76 × 56 cm · 2023',
-    slug: 'ethereal-landscapes',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=2000&h=1333&fit=crop',
-    srcMobile: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&h=1200&fit=crop',
-    alt: 'Sunset Impressions — Oil on canvas',
-    title: 'Sunset Impressions',
-    meta: 'Oil on Canvas · 130 × 95 cm · 2023',
-    slug: 'sunset-impressions',
-  },
-];
+import { carouselSlides as SLIDES } from '@/data/carousel';
 
 const INTERVAL = 5000;
 
@@ -81,15 +47,7 @@ export default function HeroCarousel() {
             fill
             priority
             sizes="100vw"
-            className="hidden sm:block object-cover object-center"
-          />
-          <Image
-            src={slide.srcMobile}
-            alt={slide.alt}
-            fill
-            priority
-            sizes="100vw"
-            className="block sm:hidden object-cover object-center"
+            className="object-cover object-center"
           />
         </motion.div>
       </AnimatePresence>

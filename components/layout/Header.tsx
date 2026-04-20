@@ -42,14 +42,27 @@ export default function Header() {
             : 'sticky top-0',                 // normal sticky on inner pages
           transparent
             ? 'bg-transparent border-transparent'
-            : 'bg-background/90 backdrop-blur-md border-b border-border'
+            : 'bg-background/90 backdrop-blur-md border-border'
         )}
       >
         <div className="w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-20 w-full items-center justify-between">
 
-            {/* Logo slot — intentionally empty */}
-            <div />
+            {/* Signature — shown on inner pages only */}
+            {isHome ? (
+              <div />
+            ) : (
+              <Link href="/" className="shrink-0 transition-opacity hover:opacity-70">
+                <Image
+                  src="/images/sohamghoshsignature.png"
+                  alt="Soham Ghosh"
+                  width={180}
+                  height={60}
+                  priority
+                  className="h-17 w-auto object-contain mix-blend-multiply"
+                />
+              </Link>
+            )}
 
             {/* Desktop nav */}
             <nav className="hidden md:flex items-center gap-1">
