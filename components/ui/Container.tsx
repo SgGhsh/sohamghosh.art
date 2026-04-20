@@ -1,0 +1,39 @@
+import { ReactNode } from 'react';
+import { cn } from '@/lib/utils';
+
+interface ContainerProps {
+  children: ReactNode;
+  className?: string;
+  size?: 'sm' | 'md' | 'lg' | 'xl';
+}
+
+const sizes = {
+  sm: 'max-w-3xl',
+  md: 'max-w-5xl',
+  lg: 'max-w-6xl',
+  xl: 'max-w-7xl',
+};
+
+/**
+ * Full-width section wrapper that centers content within a max-width cap.
+ * Uses explicit w-full + mx-auto (not Tailwind's `container` class)
+ * so centering is guaranteed regardless of Tailwind v4 config.
+ */
+export default function Container({
+  children,
+  className,
+  size = 'xl',
+}: ContainerProps) {
+  return (
+    <div
+      className={cn(
+        'w-full mx-auto',
+        'px-4 sm:px-6 lg:px-8',
+        sizes[size],
+        className
+      )}
+    >
+      {children}
+    </div>
+  );
+}

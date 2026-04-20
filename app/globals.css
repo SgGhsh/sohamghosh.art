@@ -1,26 +1,93 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Colors — B&W palette. hsl(0,0%,95%) light / hsl(0,0%,5%) dark */
+  --color-background:  #F2F2F2;
+  --color-foreground:  #0D0D0D;
+  --color-primary:     #0D0D0D;
+  --color-secondary:   #6B6B6B;
+  --color-accent:      #0D0D0D;
+  --color-accent-dark: #333333;
+  --color-muted:       #E0E0E0;
+  --color-card:        #F7F7F7;
+  --color-border:      #CCCCCC;
+
+  /* Typography — Libre Franklin = display/headings (font-serif class throughout)
+                  Libre Baskerville = body/labels (font-sans class throughout)  */
+  --font-serif: var(--font-baskerville, 'Libre Baskerville', sans-serif);
+  --font-sans:  var(--font-franklin,    'Libre Franklin', Georgia, serif);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/*
+ * IMPORTANT: ALL base/reset rules go inside @layer base so that
+ * Tailwind utility classes (text-white, text-primary, etc.) always win.
+ * CSS outside any @layer is implicitly highest-priority and defeats utilities.
+ */
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    line-height: 1.65;
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+    width: 100%;
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+  }
+
+  a { text-decoration: none; }
+  button { cursor: pointer; }
+
+  *:focus-visible {
+    outline: 1.5px solid var(--color-accent);
+    outline-offset: 3px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Animations — outside layers is fine, these are keyframes not cascade-sensitive */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.animate-fade-up  { animation: fade-up  0.7s cubic-bezier(0.19, 1, 0.22, 1) both; }
+.animate-fade-in  { animation: fade-in  0.6s ease both; }
+
+/* Subtle film-grain overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
 }
