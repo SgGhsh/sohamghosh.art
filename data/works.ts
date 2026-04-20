@@ -13,20 +13,20 @@ import { Project } from '@/types/project';
 export const works: Project[] = [
   {
     id: '1',
-    slug: 'urban-fragments',
-    title: 'Urban Fragments',
+    slug: 'the-eye',
+    title: 'The Eye',
     medium: 'Oil on Canvas',
     dimensions: { width: 120, height: 90, unit: 'cm' },
     year: 2024,
     status: 'available',
     images: [
       {
-        thumbnail: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=800&h=600&fit=crop',
-        full:      'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=2000&h=1500&fit=crop',
-        alt: 'Abstract urban landscape painting',
+        thumbnail: '/images/work/work_0.jpeg',
+        full:      '/images/work/work_0.jpeg',
+        alt: "The Eye — Maa's Anger",
       },
     ],
-    description: 'An exploration of urban landscapes through abstract forms and bold color palettes.',
+    description: "Maa's Anger",
     featured: true,
   },
   {
