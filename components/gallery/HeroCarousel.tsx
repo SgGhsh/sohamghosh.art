@@ -100,18 +100,24 @@ export default function HeroCarousel() {
       {/* Content */}
       <div className="absolute inset-0 z-20 flex flex-col text-white">
 
-        {/* Artist name — centered */}
-        <div className="flex-1 flex items-center justify-center px-4 pointer-events-none select-none">
-          <motion.h1
+        {/* Signature + ART — centered */}
+        <div className="flex-1 flex flex-col items-center justify-center gap-5 px-4 pointer-events-none select-none">
+          <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.19, 1, 0.22, 1] }}
-            className="font-serif font-extralight text-center leading-none tracking-tight
-                       text-5xl sm:text-7xl md:text-8xl lg:text-[9rem]
-                       drop-shadow-[0_2px_40px_rgba(0,0,0,0.8)]"
+            className="flex flex-col items-center gap-4"
           >
-            Soham Ghosh Art
-          </motion.h1>
+            <Image
+              src="/images/sohamghoshsignature.png"
+              alt="Soham Ghosh"
+              width={600}
+              height={200}
+              priority
+              className="w-[min(780px,88vw)] h-auto object-contain invert mix-blend-screen
+                         drop-shadow-[0_2px_40px_rgba(0,0,0,0.6)]"
+            />
+          </motion.div>
         </div>
 
         {/* Bottom bar */}

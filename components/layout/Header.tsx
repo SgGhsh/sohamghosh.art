@@ -48,22 +48,8 @@ export default function Header() {
         <div className="w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-20 w-full items-center justify-between">
 
-            {/* Signature logo */}
-            <Link href="/" className="shrink-0 transition-opacity hover:opacity-70">
-              <Image
-                src="/images/sohamghoshsignature.png"
-                alt="Soham Ghosh"
-                width={180}
-                height={60}
-                priority
-                className={cn(
-                  'h-[68px] w-auto object-contain transition-all duration-300',
-                  transparent
-                    ? 'invert mix-blend-screen'
-                    : 'mix-blend-multiply'
-                )}
-              />
-            </Link>
+            {/* Logo slot — intentionally empty */}
+            <div />
 
             {/* Desktop nav */}
             <nav className="hidden md:flex items-center gap-1">
