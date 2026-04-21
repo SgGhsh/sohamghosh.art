@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import Image from "next-image-export-optimizer";
+import signatureImage from '../../public/images/sohamghoshsignature.png';
 import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
 import Container from '@/components/ui/Container';
@@ -67,7 +68,7 @@ export default function HeroCarousel() {
             className="flex flex-col items-center gap-4"
           >
             <Image
-              src="/images/sohamghoshsignature.png"
+              src={signatureImage}
               alt="Soham Ghosh"
               width={600}
               height={200}

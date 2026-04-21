@@ -1,5 +1,11 @@
+import { StaticImageData } from 'next/image';
+import carousel0 from '../public/images/hero/carousel_0.jpeg';
+import carousel1 from '../public/images/hero/carousel_1.jpeg';
+import carousel2 from '../public/images/hero/carousel_2.jpeg';
+import carousel3 from '../public/images/hero/carousel_3.jpeg';
+
 export interface CarouselSlide {
-  src: string;
+  src: StaticImageData;
   alt: string;
   title: string;
   meta: string;   // e.g. "Oil on Canvas · 120 × 90 cm · 2024"
@@ -8,28 +14,28 @@ export interface CarouselSlide {
 
 export const carouselSlides: CarouselSlide[] = [
   {
-    src: '/images/hero/carousel_0.jpeg',
+    src: carousel0,
     alt: '',
     title: 'Durga Eye',
     meta: 'Oil on Canvas · 120 × 90 cm · 2024',
     slug: '',
   },
   {
-    src: '/images/hero/carousel_1.jpeg',
+    src: carousel1,
     alt: '',
     title: 'Sleeping Buddha',
     meta: 'Oil on Canvas · 120 × 90 cm · 2024',
     slug: '',
   },
   {
-    src: '/images/hero/carousel_2.jpeg',
+    src: carousel2,
     alt: '',
     title: 'Ethereal',
     meta: 'Oil on Canvas · 120 × 90 cm · 2024',
     slug: '',
   },
   {
-    src: '/images/hero/carousel_3.jpeg',
+    src: carousel3,
     alt: '',
     title: 'Marriage',
     meta: 'Oil on Canvas · 120 × 90 cm · 2024',
