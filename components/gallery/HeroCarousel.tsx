@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import Image from 'next/image';
+import Image from "next-image-export-optimizer";
 import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
 import Container from '@/components/ui/Container';

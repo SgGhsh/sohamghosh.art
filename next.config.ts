@@ -11,7 +11,17 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  transpilePackages: ["next-image-export-optimizer"],
   allowedDevOrigins: ['uncolored-education-filling.ngrok-free.dev'],
+  env: {
+    nextImageExportOptimizer_imageFolderPath: "public/images",
+    nextImageExportOptimizer_exportFolderPath: "out",
+    nextImageExportOptimizer_quality: "75",
+    nextImageExportOptimizer_storePicturesInWEBP: "true",
+    nextImageExportOptimizer_exportFolderName: "nextImageExportOptimizer",
+    nextImageExportOptimizer_generateAndUseBlurImages: "true",
+    nextImageExportOptimizer_remoteImageCacheTTL: "0",
+  },
 };
 
 export default nextConfig;

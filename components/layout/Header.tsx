@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
+import Image from "next-image-export-optimizer";
 import { usePathname } from 'next/navigation';
 import { Menu } from 'lucide-react';
 import { useState, useEffect } from 'react';

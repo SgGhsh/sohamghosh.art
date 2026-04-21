@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
+import Image from "next-image-export-optimizer";
 import { aboutConfig } from '@/data/about';
 import Container from '@/components/ui/Container';
 import { FadeIn } from '@/components/ui/FadeIn';

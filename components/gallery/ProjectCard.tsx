@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import Image from "next-image-export-optimizer";
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Project } from '@/types/project';
