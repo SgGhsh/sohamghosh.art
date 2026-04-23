@@ -21,8 +21,8 @@ export const works: Project[] = [
     status: 'available',
     images: [
       {
-        thumbnail: '/images/work/The Sleeping Budha.png',
-        full:      '/images/work/The Sleeping Budha.png',
+        thumbnail: '/images/work/The Sleeping Budha.jpg',
+        full:      '/images/work/The Sleeping Budha.jpg ',
         alt: "The Sleeping Buddha",
       },
     ],
