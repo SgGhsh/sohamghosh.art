@@ -21,8 +21,8 @@ export const works: Project[] = [
     status: 'available',
     images: [
       {
-        thumbnail: '/images/work/The Sleeping Budha.jpg',
-        full:      '/images/work/The Sleeping Budha.jpg ',
+        thumbnail: '/images/work/The Sleeping Buddha.jpg',
+        full:      '/images/work/The Sleeping Buddha.jpg',
         alt: "The Sleeping Buddha",
       },
     ],
@@ -33,42 +33,58 @@ This painting came later, shaped by memory rather than sight. Each stroke was an
 It is not perfect. It was never meant to be.
 It carries the struggle of remembering, the weight of feeling, and the quiet persistence of trying to hold onto something that was never meant to stay.
 `,
-    featured: false
+    featured: true,
   },
   {
     id: '2',
-    slug: 'midnight-reverie',
-    title: 'Midnight Reverie',
-    medium: 'Acrylic on Canvas',
+    slug: 'Namaste',
+    title: 'Namaste',
+    medium: 'Charcoal, Pencil and Pen on White Board',
     dimensions: { width: 100, height: 80, unit: 'cm' },
-    year: 2024,
+    year: 2017,
     status: 'sold',
     images: [
       {
-        thumbnail: 'https://images.unsplash.com/photo-1549887534-1541e9326642?w=800&h=600&fit=crop',
-        full:      'https://images.unsplash.com/photo-1549887534-1541e9326642?w=2000&h=1500&fit=crop',
-        alt: 'Dark abstract painting with blue tones',
+        thumbnail: '/images/work/Namaste.jpg',
+        full:      '/images/work/Namaste.jpg',
+        alt: 'Namaste',
       },
     ],
-    description: 'A contemplative piece exploring the quiet moments of night.',
+    description: `This is a simple sketch. A small gesture. Almost self-explanatory.
+Namaste.
+But the meaning did not come from tradition this time. It came from a child.
+A few days ago, I met a young girl from my building. I had seen her before, always cheerful in her own quiet way. At first, she would just smile, sometimes wave, sometimes make those little expressions only children can get away with.
+That day was different. She looked at me and asked, “Kemon acho?” (How are you?). Not out of habit, but with a full, honest smile. I answered, and before I could think further, she reached for my hand. Gently, without hesitation, she held it and kissed my fingers with the innocence of someone who has not yet learned doubt.
+It stayed with me.
+She did not know who I was. She did not need to. There was no judgment, no calculation. Just a simple act of acknowledging another human being.
+This sketch comes from that moment. It is not about perfection or detail. It is about remembering something we slowly forget. The ease of greeting, the warmth of connection, the absence of hesitation. Somewhere along the way, we learn to hold back.
+Children remind us that we never really had to.
+`,
     featured: true,
   },
   {
     id: '3',
-    slug: 'chromatic-dreams',
-    title: 'Chromatic Dreams',
-    medium: 'Mixed Media on Canvas',
-    dimensions: { width: 150, height: 100, unit: 'cm' },
-    year: 2023,
+    slug: 'The Witness',
+    title: 'The Witness',
+    medium: 'Oil on Canvas',
+    dimensions: { width: 15, height: 19, unit: 'in' },
+    year: 2025,
     status: 'available',
     images: [
       {
-        thumbnail: 'https://images.unsplash.com/photo-1578321272176-b7bbc0679853?w=800&h=600&fit=crop',
-        full:      'https://images.unsplash.com/photo-1578321272176-b7bbc0679853?w=2000&h=1500&fit=crop',
-        alt: 'Colorful abstract mixed media artwork',
+        thumbnail: '/images/work/The Witness.jpg',
+        full:      '/images/work/The Witness.jpg',
+        alt: 'The Witness',
       },
     ],
-    description: 'Vibrant exploration of color theory and emotional expression.',
+    description: `We grew up reading about war.It lived in textbooks, in chapters we could close, in stories that belonged to another time. Numbers, dates, victories, losses. It all felt distant, almost unreal.
+But in 2025 and beyond, distance disappeared. War entered our daily lives through screens. Not as history, but as repetition. Cities burning. Skies breaking. Names of places turning into headlines we could not ignore. Iran, Israel, Palestine, Ukraine, Russia. Closer to home, tensions that no longer felt like just news. And somewhere within all of this, there are people who do not make the headlines.
+This painting is not of one woman. It is of many.
+She stands not as a victim alone, but as a witness. To noise, to loss, to the slow normalization of violence. Her eyes hold what words often fail to carry. Not just fear, but understanding. The kind that comes from seeing too much, too often. Behind her, the world burns. The birds circle, not as symbols, but as reminders. Life continues, even in destruction. Or perhaps it simply adapts. Her silence is not empty. It is heavy. It questions without asking.
+Is this necessary?
+Not directed at one nation, one leader, or one moment. But at all of us. At the idea that violence must always find a place in human history. Because in the end, whether we speak or stay silent, we are all witnessing something.
+And that, in itself, changes us.
+`,
     featured: true,
   },
   {
