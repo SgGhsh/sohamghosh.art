@@ -13,21 +13,27 @@ import { Project } from '@/types/project';
 export const works: Project[] = [
   {
     id: '1',
-    slug: 'the-eye',
-    title: 'The Eye',
+    slug: 'The Sleeping Buddha',
+    title: 'The Sleeping Buddha',
     medium: 'Oil on Canvas',
-    dimensions: { width: 120, height: 90, unit: 'cm' },
-    year: 2024,
+    dimensions: { width: 33.5, height: 22, unit: 'in' },
+    year: 2025,
     status: 'available',
     images: [
       {
-        thumbnail: '/images/work/work_0.jpeg',
-        full:      '/images/work/work_0.jpeg',
-        alt: "The Eye — Maa's Anger",
+        thumbnail: '/images/work/The Sleeping Budha.png',
+        full:      '/images/work/The Sleeping Budha.png',
+        alt: "The Sleeping Buddha",
       },
     ],
-    description: "Maa's Anger",
-    featured: true,
+    description: `There are journeys that begin as plans and end as something else entirely; something quieter, deeper, almost impossible to explain. This one started with a group of young friends, just out of school, stepping into the first days of college life. We had little money, but an abundance of intent. Sandakphu was not just a destination; it was a promise we made to ourselves. Seven days of walking, laughing, aching, and moving forward. By the time we reached, the mountains did not greet us loudly. They revealed themselves slowly; like a thought you don’t notice forming.
+And then there was that night.
+The cold was sharp, almost unforgiving. Snow fell lightly, unfamiliar and magical at once. My hands trembled, not just from the weather but from the urgency to capture what lay before me. The camera I carried, simple, limited; refused to see what my eyes could. The darkness swallowed detail, and the moment slipped through every photograph I tried to take. So I stood still. The mountains rested in the distance, forming the shape of the Sleeping Buddha; vast, silent, and complete. In that stillness, I felt as if I wasn’t alone. It was as though my father stood beside me, sharing the same view, the same quiet understanding that some things are meant to be felt, not captured.
+This painting came later, shaped by memory rather than sight. Each stroke was an attempt to return; to the cold air, the dim light, the hush of that night. I worked through uncertainty, through the frustration of not quite getting it right, layering color and silence together.
+It is not perfect. It was never meant to be.
+It carries the struggle of remembering, the weight of feeling, and the quiet persistence of trying to hold onto something that was never meant to stay.
+`,
+    featured: false
   },
   {
     id: '2',
