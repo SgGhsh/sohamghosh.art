@@ -40,7 +40,7 @@ It carries the struggle of remembering, the weight of feeling, and the quiet per
     slug: 'Namaste',
     title: 'Namaste',
     medium: 'Charcoal, Pencil and Pen on White Board',
-    dimensions: { width: 100, height: 80, unit: 'cm' },
+    dimensions: { width: 14, height: 18, unit: 'in' },
     year: 2017,
     status: 'sold',
     images: [
