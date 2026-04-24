@@ -53,13 +53,13 @@ export default async function ProjectPage({ params }: Props) {
 
           {/* Image column */}
           <FadeIn direction="left" className="lg:col-span-3">
-            <div className="relative w-full aspect-[3/4] overflow-hidden bg-muted border border-border">
+            <div className="w-full bg-muted border border-border">
               <Image
                 src={project.images[0].full}
                 alt={project.images[0].alt}
-                fill
-                sizes="(max-width: 1024px) 100vw, 60vw"
-                className="object-cover"
+                width={800}
+                height={600}
+                className="w-full h-auto"
                 priority
               />
             </div>

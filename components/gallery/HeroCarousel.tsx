@@ -140,8 +140,8 @@ export default function HeroCarousel() {
                       aria-label={`Go to slide ${i + 1}`}
                       className={`transition-all duration-300 rounded-full ${
                         i === index
-                          ? 'w-6 h-[3px] bg-white'
-                          : 'w-[6px] h-[6px] bg-white/35 hover:bg-white/65'
+                          ? 'w-6 h-0.75 bg-white'
+                          : 'w-1.5 h-1.5 bg-white/35 hover:bg-white/65'
                       }`}
                     />
                   ))}
@@ -172,7 +172,7 @@ export default function HeroCarousel() {
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: INTERVAL / 1000, ease: 'linear' }}
-            className="absolute bottom-0 left-0 right-0 h-[2px] bg-white/40 origin-left z-30"
+            className="absolute bottom-0 left-0 right-0 h-0.5 bg-white/40 origin-left z-30"
           />
         )}
       </section>
@@ -236,8 +236,8 @@ export default function HeroCarousel() {
                   aria-label={`Go to slide ${i + 1}`}
                   className={`transition-all duration-300 rounded-full ${
                     i === index
-                      ? 'w-6 h-[3px] bg-black'
-                      : 'w-[6px] h-[6px] bg-black/35 active:bg-black/65'
+                      ? 'w-6 h-0.75 bg-black'
+                      : 'w-1.5 h-1.5 bg-black/35 active:bg-black/65'
                   }`}
                 />
               ))}

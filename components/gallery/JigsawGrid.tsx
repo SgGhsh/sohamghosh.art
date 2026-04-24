@@ -21,7 +21,7 @@ export default function JigsawGrid({ children, className, columns }: JigsawGridP
         visible: { transition: { staggerChildren: 0.05, delayChildren: 0.03 } },
       }}
       className={cn(
-        'w-full px-[8.33%]',
+        'w-full px-4 md:px-[8.33%]',
         columns ?? 'columns-1 sm:columns-2 lg:columns-3 gap-x-4',
         className
       )}

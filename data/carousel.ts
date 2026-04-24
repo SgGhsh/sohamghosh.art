@@ -1,4 +1,4 @@
-import { StaticImageData } from 'next/image';
+import { type StaticImageData } from 'next/image';
 import carousel0 from '../public/images/hero/carousel_0.jpg';
 import carousel1 from '../public/images/hero/carousel_1.jpg';
 import carousel2 from '../public/images/hero/carousel_2.jpg';
