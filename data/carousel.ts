@@ -3,9 +3,9 @@ import carousel0 from '../public/images/hero/carousel_0.jpg';
 import carousel1 from '../public/images/hero/carousel_1.jpg';
 import carousel2 from '../public/images/hero/carousel_2.jpg';
 import carousel3 from '../public/images/hero/carousel_3.jpg';
-import carousel3 from '../public/images/hero/carousel_4.jpg';
-import carousel3 from '../public/images/hero/carousel_5.jpg';
-import carousel3 from '../public/images/hero/carousel_6.jpg';
+import carousel4 from '../public/images/hero/carousel_4.jpg';
+import carousel5 from '../public/images/hero/carousel_5.jpg';
+import carousel6 from '../public/images/hero/carousel_6.jpg';
 
 export interface CarouselSlide {
   src: StaticImageData;
