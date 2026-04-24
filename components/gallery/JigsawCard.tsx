@@ -19,7 +19,7 @@ export default function JigsawCard({ project }: { project: Project }) {
   const { width, height } = project.dimensions;
 
   return (
-    <motion.div variants={itemVariant} className="break-inside-avoid mb-[2px]">
+    <motion.div variants={itemVariant} className="break-inside-avoid mb-0.5">
       <Link href={`/work/${project.slug}`} className="group block">
         <div className="relative overflow-hidden">
           <Image

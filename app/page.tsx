@@ -1,15 +1,10 @@
 import Link from 'next/link';
 import Image from "next-image-export-optimizer";
-import { projects } from '@/data/projects';
 import { Button } from '@/components/ui/Button';
-import Container from '@/components/ui/Container';
-import ProjectGrid from '@/components/gallery/ProjectGrid';
-import { FadeIn } from '@/components/ui/FadeIn';
 import HeroCarousel from '@/components/gallery/HeroCarousel';
 import signatureImage from '@/public/images/sohamghoshsignature.png';
 
 export default function Home() {
-  const featured = projects.filter((p) => p.featured);
 
   return (
     <>
@@ -21,11 +16,11 @@ export default function Home() {
       {/* ─── Mobile: Layout with spacing ───────────────────────────────── */}
       <div className="md:hidden flex flex-col">
         {/* Header Spacer */}
-        <div className="h-20 flex-shrink-0" />
+        <div className="h-20 shrink-0" />
 
         {/* Carousel with padding and taller aspect ratio */}
-        <div className="w-full px-4 flex-shrink-0">
-          <div className="w-full aspect-[16/16]">
+        <div className="w-full px-4 shrink-0">
+          <div className="w-full aspect-16/16">
             <HeroCarousel />
           </div>
         </div>

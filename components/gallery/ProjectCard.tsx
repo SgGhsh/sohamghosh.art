@@ -30,7 +30,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <div className="overflow-hidden rounded-sm border border-border bg-card transition-all duration-300 hover:shadow-lg hover:border-accent/40">
 
           {/* Image */}
-          <div className="relative aspect-[3/4] overflow-hidden bg-muted">
+          <div className="relative aspect-3/4 overflow-hidden bg-muted">
             <Image
               src={img.thumbnail}
               alt={img.alt}
