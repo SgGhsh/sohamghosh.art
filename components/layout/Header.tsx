@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 const NAV_LINKS = [
   { href: '/work',    label: 'Work' },
   { href: '/about',   label: 'About' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/acquire', label: 'Acquire' },
 ];
 
 export default function Header() {
@@ -42,7 +42,7 @@ export default function Header() {
             : 'sticky top-0',                 // normal sticky on inner pages
           transparent
             ? 'bg-transparent border-transparent'
-            : 'bg-black dark:bg-white border-border'
+            : 'bg-background border-border'
         )}
       >
         <div className="w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

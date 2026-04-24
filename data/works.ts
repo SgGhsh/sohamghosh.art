@@ -157,9 +157,9 @@ This is hysteria as silence that refuses to leave.`,
     status: 'available',
     images: [
       {
-        thumbnail: "/images/work/Lien d'amour.jpg",
-        full:      "/images/work/Lien d'amour.jpg",
-        alt: "Lien d'amour",
+        thumbnail: "/images/work/Lien d\u2019amour.jpg",
+        full:      "/images/work/Lien d\u2019amour.jpg",
+        alt: "Lien d\u2019amour",
       },
     ],
     description: `This piece began with a simple thought.
