@@ -42,14 +42,14 @@ export default function Header() {
             : 'sticky top-0',                 // normal sticky on inner pages
           transparent
             ? 'bg-transparent border-transparent'
-            : 'bg-background/90 backdrop-blur-md border-border'
+            : 'bg-black dark:bg-white border-border'
         )}
       >
         <div className="w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-20 w-full items-center justify-between">
 
             {/* Signature — shown on inner pages only */}
-            {isHome ? (
+            {isHome && !scrolled ? (
               <div />
             ) : (
               <Link href="/" className="shrink-0 transition-opacity hover:opacity-70">

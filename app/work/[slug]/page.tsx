@@ -105,9 +105,13 @@ export default async function ProjectPage({ params }: Props) {
 
               {/* Description */}
               {project.description && (
-                <p className="text-secondary leading-relaxed font-light text-sm border-t border-border pt-6">
-                  {project.description}
-                </p>
+                <div className="border-t border-border pt-6 prose prose-sm max-w-none text-justify
+                  prose-p:text-secondary prose-p:font-light prose-p:leading-relaxed prose-p:mt-0 prose-p:mb-3
+                  last:prose-p:mb-0">
+                  {project.description.split('\n').filter(Boolean).map((para, i) => (
+                    <p key={i}>{para}</p>
+                  ))}
+                </div>
               )}
 
               {/* Inquire CTA */}

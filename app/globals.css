@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
   /* Colors — B&W palette. hsl(0,0%,95%) light / hsl(0,0%,5%) dark */
