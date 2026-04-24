@@ -8,6 +8,8 @@ import { Project } from '@/types/project';
 import Container from '@/components/ui/Container';
 import { FadeIn } from '@/components/ui/FadeIn';
 import { Button } from '@/components/ui/Button';
+import JigsawGrid from '@/components/gallery/JigsawGrid';
+import { motion } from 'framer-motion';
 
 const availableWorks = works.filter((w) => w.status === 'available');
 
@@ -98,7 +100,7 @@ export default function AcquirePage() {
         <Container size="md">
           <FadeIn>
             <p className="font-sans text-[10px] uppercase tracking-[0.3em] text-secondary mb-2">
-              Acquire
+              Get your one off piece 
             </p>
             <h1 className="font-serif text-4xl md:text-5xl font-semibold text-primary tracking-tight">
               Acquire
@@ -106,46 +108,58 @@ export default function AcquirePage() {
           </FadeIn>
         </Container>
 
-        {/* ── Works grid — full width, 12 columns ─── */}
-        <FadeIn className="w-full px-2 sm:px-3">
-          <div className="px-2 sm:px-3 mb-4">
+        {/* ── Works grid — jigsaw layout ─── */}
+        <div className="w-full">
+          <div className="px-[8.33%] mb-4">
             <p className="font-sans text-[10px] uppercase tracking-[0.3em] text-secondary">
               Available works — click to inquire
             </p>
           </div>
-          <div className="grid grid-cols-12 gap-1.5">
-            {availableWorks.map((work) => (
-              <button
-                key={work.id}
-                onClick={() => setSelected(work)}
-                className="col-span-6 sm:col-span-3 md:col-span-2 lg:col-span-1 group relative overflow-hidden bg-card cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-              >
-                <div className="relative w-full overflow-hidden">
-                  <Image
-                    src={work.images[0].thumbnail}
-                    alt={work.images[0].alt}
-                    width={400}
-                    height={600}
-                    className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-end p-2 opacity-0 group-hover:opacity-100">
-                    <span className="text-white text-[9px] uppercase tracking-widest font-medium">
-                      Inquire ↗
-                    </span>
-                  </div>
-                </div>
-                <div className="p-2 space-y-0.5">
-                  <p className="font-serif text-xs text-primary leading-tight truncate">
-                    {work.title}
-                  </p>
-                  <p className="font-sans text-[9px] text-secondary truncate">
-                    {work.year}
-                  </p>
-                </div>
-              </button>
-            ))}
-          </div>
-        </FadeIn>
+          <JigsawGrid columns="columns-4 sm:columns-6 lg:columns-9 gap-x-2">
+            {availableWorks.map((work) => {
+              const { width, height } = work.dimensions;
+              return (
+                <motion.div
+                  key={work.id}
+                  variants={{
+                    hidden: { opacity: 0, y: 10 },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      transition: { duration: 0.55, ease: [0.19, 1, 0.22, 1] },
+                    },
+                  }}
+                  className="break-inside-avoid mb-[2px]"
+                >
+                  <button
+                    onClick={() => setSelected(work)}
+                    className="group block w-full text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                  >
+                    <div className="relative overflow-hidden">
+                      <Image
+                        src={work.images[0].thumbnail}
+                        alt={work.images[0].alt}
+                        width={Math.round(width * 20)}
+                        height={Math.round(height * 20)}
+                        sizes="(max-width: 640px) 25vw, (max-width: 1024px) 17vw, 13vw"
+                        className="w-full h-auto block transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-[1.02]"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-end p-3">
+                        <span className="text-white text-[9px] uppercase tracking-widest font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          Inquire ↗
+                        </span>
+                      </div>
+                    </div>
+                    <div className="py-2 px-0.5 space-y-0.5">
+                      <p className="font-serif text-xs text-primary leading-tight">{work.title}</p>
+                      <p className="font-sans text-[9px] text-secondary">{work.year}</p>
+                    </div>
+                  </button>
+                </motion.div>
+              );
+            })}
+          </JigsawGrid>
+        </div>
 
         {/* ── Contact panel + Form ─────────────────── */}
         <Container size="md">

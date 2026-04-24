@@ -88,10 +88,10 @@ export default function Header() {
             <button
               onClick={() => setOpen(true)}
               className={cn(
-                'md:hidden inline-flex items-center justify-center p-2 rounded-md transition-colors',
+                'md:hidden inline-flex items-center justify-center p-2 rounded-sm transition-colors',
                 transparent
-                  ? 'text-white hover:text-white/80'
-                  : 'text-secondary hover:text-primary hover:bg-muted'
+                  ? 'text-black hover:text-black/80'
+                  : 'text-secondary bg-muted border border-border hover:text-primary hover:bg-muted/80'
               )}
               aria-label="Open menu"
             >

@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="w-full border-t border-border bg-muted/40">
       <div className="w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 w-full items-center justify-between">
+        <div className="flex h-12 w-full items-center justify-between">
           <p className="text-sm text-secondary font-light">
             © {new Date().getFullYear()} {siteConfig.name}
           </p>
