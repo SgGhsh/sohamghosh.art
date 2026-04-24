@@ -82,12 +82,22 @@ export default function AcquirePage() {
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    setStatus('sending');
-    setTimeout(() => {
-      setStatus('sent');
-      setForm({ name: '', email: '', artwork: '', message: '' });
-      setTimeout(() => setStatus('idle'), 4000);
-    }, 1000);
+    
+    const subject = encodeURIComponent(
+      `Inquiry from ${form.name}${form.artwork ? ` - ${form.artwork}` : ''}`
+    );
+    
+    const body = encodeURIComponent(
+      `Name: ${form.name}\nEmail: ${form.email}${form.artwork ? `\nArtwork: ${form.artwork}` : ''}\n\nMessage:\n${form.message}`
+    );
+    
+    const mailtoLink = `mailto:${siteConfig.email}?subject=${subject}&body=${body}`;
+    
+    window.location.href = mailtoLink;
+    
+    setStatus('sent');
+    setForm({ name: '', email: '', artwork: '', message: '' });
+    setTimeout(() => setStatus('idle'), 2000);
   };
 
   return (
