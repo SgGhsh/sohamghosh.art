@@ -115,7 +115,7 @@ export default function AcquirePage() {
               Available works — click to inquire
             </p>
           </div>
-          <JigsawGrid columns="columns-4 sm:columns-6 lg:columns-9 gap-x-2">
+          <JigsawGrid columns="columns-4 sm:columns-6 lg:columns-9 gap-x-1 md:gap-x-2">
             {availableWorks.map((work) => {
               const { width, height } = work.dimensions;
               return (
@@ -129,7 +129,7 @@ export default function AcquirePage() {
                       transition: { duration: 0.55, ease: [0.19, 1, 0.22, 1] },
                     },
                   }}
-                  className="break-inside-avoid mb-[2px]"
+                  className="break-inside-avoid mb-1"
                 >
                   <button
                     onClick={() => setSelected(work)}
