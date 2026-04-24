@@ -38,28 +38,17 @@ export default function AboutPage() {
 
               {/* Page heading — moved here from top */}
               <div>
-                <p className="font-sans text-[10px] uppercase tracking-[0.3em] text-secondary mb-2">
-                  {aboutConfig.slug}
-                </p>
                 <h1 className="font-serif text-4xl md:text-5xl font-semibold text-primary tracking-tight">
-                  {aboutConfig.title}
+                  {aboutConfig.title} the {aboutConfig.slug}
                 </h1>
               </div>
 
-              {/* Name + tagline */}
-              <div>
-                <h2 className="font-serif text-2xl font-semibold text-primary mb-1">
-                  {aboutConfig.name}
-                </h2>
-                <p className="text-sm text-secondary font-light tracking-wide">
-                  {aboutConfig.tagline}
-                </p>
-              </div>
+              
 
               {/* Bio */}
-              <div className="space-y-4">
+              <div className="prose prose-sm max-w-none text-justify">
                 {aboutConfig.body.split('\n\n').map((p, i) => (
-                  <p key={i} className="text-secondary leading-relaxed font-light text-sm">
+                  <p key={i}>
                     {p.trim()}
                   </p>
                 ))}
