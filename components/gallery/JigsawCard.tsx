@@ -19,7 +19,7 @@ export default function JigsawCard({ project }: { project: Project }) {
   const { width, height } = project.dimensions;
 
   return (
-    <motion.div variants={itemVariant} className="break-inside-avoid mb-0.5">
+    <motion.div variants={itemVariant} className="break-inside-avoid mb-4">
       <Link href={`/work/${project.slug}`} className="group block">
         <div className="relative overflow-hidden">
           <Image
@@ -35,11 +35,11 @@ export default function JigsawCard({ project }: { project: Project }) {
               View ↗
             </span>
           </div>
+          <div className="absolute bottom-2 right-2 w-5 h-5 rounded-full border border-white/50 bg-black/25 backdrop-blur-sm flex items-center justify-center transition-all duration-300 group-hover:border-white/90 group-hover:bg-black/40">
+            <span className="text-white/70 text-[9px] font-medium leading-none group-hover:text-white select-none">i</span>
+          </div>
         </div>
-        <div className="py-2 px-0.5 space-y-0.5">
-          <p className="font-serif text-xs text-primary leading-tight">{project.title}</p>
-          <p className="font-sans text-[9px] text-secondary">{project.year}</p>
-        </div>
+
       </Link>
     </motion.div>
   );
