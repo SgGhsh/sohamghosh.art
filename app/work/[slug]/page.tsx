@@ -120,7 +120,12 @@ export default async function ProjectPage({ params }: Props) {
               {/* Inquire CTA */}
               {project.status === 'available' && (
                 <Button asChild size="lg" className="w-full font-light tracking-widest text-xs uppercase mt-2">
-                  <Link href="/contact">Inquire About This Piece</Link>
+                  <Link href={`/acquire?piece=${encodeURIComponent(project.title)}`}>Inquire About This Piece</Link>
+                </Button>
+              )}
+              {project.status === 'sold' && (
+                <Button asChild size="lg" className="w-full font-light tracking-widest text-xs uppercase mt-2">
+                  <Link href={`/acquire?piece=${encodeURIComponent(project.title)}&type=print`}>Inquire for Fine Art Prints</Link>
                 </Button>
               )}
 

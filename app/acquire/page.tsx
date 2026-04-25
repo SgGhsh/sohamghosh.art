@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import Image from 'next-image-export-optimizer';
+import { useSearchParams } from 'next/navigation';
 import { siteConfig } from '@/data/projects';
 import { works } from '@/data/works';
 import { Project } from '@/types/project';
@@ -75,24 +76,38 @@ function InquiryModal({ work, onClose }: { work: Project; onClose: () => void })
   );
 }
 
-export default function AcquirePage() {
+function AcquireContent() {
+  const searchParams = useSearchParams();
   const [form, setForm]         = useState({ name: '', artwork: '', message: '' });
   const [selected, setSelected] = useState<Project | null>(null);
+
+  const isPrint = searchParams.get('type') === 'print';
+
+  useEffect(() => {
+    const raw = searchParams.get('piece');
+    if (!raw) return;
+    const piece = decodeURIComponent(raw);
+    const match = works.find((w) => w.title === piece);
+    if (match) setForm((prev) => ({ ...prev, artwork: piece }));
+  }, [searchParams]);
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
 
+    const inquiryType = isPrint ? 'Fine Art Print Inquiry' : 'Inquiry';
+
     const subject = encodeURIComponent(
-      form.artwork ? `${form.name} - ${form.artwork} Inquiry` : `${form.name} - Inquiry`
+      form.artwork ? `${form.name} - ${form.artwork} ${inquiryType}` : `${form.name} - ${inquiryType}`
     );
 
     const body = encodeURIComponent(
       [
         `Name: ${form.name}`,
         form.artwork ? `Piece: ${form.artwork}` : '',
+        isPrint ? `Type: Fine Art Print` : '',
         '',
         `Message:`,
-        form.message,
+        isPrint ? `Fine Art Print — ${form.message}` : form.message,
       ]
         .filter((line, i, arr) => !(line === '' && arr[i - 1] === ''))
         .join('\n')
@@ -274,5 +289,13 @@ export default function AcquirePage() {
 
       </section>
     </>
+  );
+}
+
+export default function AcquirePage() {
+  return (
+    <Suspense>
+      <AcquireContent />
+    </Suspense>
   );
 }
