@@ -9,8 +9,8 @@ import MobileMenu from './MobileMenu';
 import { cn } from '@/lib/utils';
 
 const NAV_LINKS = [
-  { href: '/work',    label: 'Work' },
-  { href: '/about',   label: 'About' },
+  { href: '/work',    label: 'Collections' },
+  { href: '/about',   label: 'About The Artist' },
   { href: '/acquire', label: 'Acquire' },
 ];
 

@@ -1,6 +1,6 @@
 export const aboutConfig = {
   slug: 'Artist',
-  title: 'About',
+  title: 'About The Artist',
   name: 'Soham Ghosh',
   tagline: 'Contemporary Artist',
   body: `Soham Ghosh is a painter based in Kolkata.

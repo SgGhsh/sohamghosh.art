@@ -39,7 +39,7 @@ export default function AboutPage() {
               {/* Page heading — moved here from top */}
               <div>
                 <h1 className="font-serif text-4xl md:text-5xl font-semibold text-primary tracking-tight">
-                  {aboutConfig.title} the {aboutConfig.slug}
+                  {aboutConfig.title}
                 </h1>
               </div>
 

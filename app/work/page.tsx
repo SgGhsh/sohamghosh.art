@@ -6,7 +6,7 @@ import JigsawCard from '@/components/gallery/JigsawCard';
 import { FadeIn } from '@/components/ui/FadeIn';
 
 export const metadata: Metadata = {
-  title: 'Work',
+  title: 'Collections',
   description: 'Complete collection of works by Soham Ghosh',
 };
 
@@ -20,7 +20,7 @@ export default function WorkPage() {
             Complete Collection
           </p>
           <h1 className="font-serif text-4xl md:text-5xl font-semibold text-primary tracking-tight">
-            All Work
+            All Collections
           </h1>
           <p className="mt-2 text-sm text-secondary font-light">
             {works.length} pieces

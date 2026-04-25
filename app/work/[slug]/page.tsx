@@ -43,7 +43,7 @@ export default async function ProjectPage({ params }: Props) {
           <Button asChild variant="ghost" size="sm" className="-ml-2 text-secondary hover:text-primary">
             <Link href="/work">
               <ChevronLeft className="mr-1 h-4 w-4" />
-              All Work
+              All Collections
             </Link>
           </Button>
         </FadeIn>
