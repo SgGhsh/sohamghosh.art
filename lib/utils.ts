@@ -26,7 +26,7 @@ export function getStatusLabel(status: Project['status']): string {
 export function getStatusColor(status: Project['status']): string {
   const colors = {
     available: 'text-green-600 border-green-600',
-    sold: 'text-secondary border-secondary',
+    sold: 'text-red-600 border-red-600',
     private: 'text-secondary border-secondary',
     'not-for-sale': 'text-secondary border-secondary',
   };

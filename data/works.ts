@@ -129,7 +129,7 @@ That even in the most mechanical, indifferent spaces, something deeply human con
     medium: 'Charcoal, Pencil and Pen on White Board',
     dimensions: { width: 16, height: 24, unit: 'in' },
     year: 2022,
-    status: 'available',
+    status: 'sold',
     images: [
       {
         thumbnail: '/images/work/Hysteria.jpg',
@@ -221,7 +221,7 @@ And sometimes, that is where the truth feels most real.`,
     medium: 'Charcoal, Pencil and Pen on White Board',
     dimensions: { width: 14, height: 18, unit: 'in' },
     year: 2024,
-    status: 'available',
+    status: 'sold',
     images: [
       {
         thumbnail: '/images/work/World View.jpg',
@@ -350,7 +350,7 @@ He inhales once more, then lets it go. Not holding on. Not resisting. Just letti
     medium: 'Charcoal, Pencil and Pen on White Board',
     dimensions: { width: 14, height: 18, unit: 'in' },
     year: 2019,
-    status: 'available',
+    status: 'sold',
     images: [
       {
         thumbnail: '/images/work/The Voice.jpg',
@@ -389,7 +389,7 @@ That's it.`,
     medium: 'Charcoal, Pencil and Pen on White Board',
     dimensions: { width: 14, height: 18, unit: 'in' },
     year: 2020,
-    status: 'available',
+    status: 'sold',
     images: [
       {
         thumbnail: '/images/work/Untitled Again.jpg',

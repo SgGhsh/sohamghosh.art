@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import Image from "next-image-export-optimizer";
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import ZoomableImage from '@/components/gallery/ZoomableImage';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { projects } from '@/data/projects';
 import { getProjectBySlug, formatDimensions, getStatusLabel, getStatusColor, cn } from '@/lib/utils';
@@ -53,16 +53,12 @@ export default async function ProjectPage({ params }: Props) {
 
           {/* Image column */}
           <FadeIn direction="left" className="lg:col-span-3">
-            <div className="w-full bg-muted border border-border">
-              <Image
-                src={project.images[0].full}
-                alt={project.images[0].alt}
-                width={800}
-                height={600}
-                className="w-full h-auto"
-                priority
-              />
-            </div>
+            <ZoomableImage
+              src={project.images[0].full}
+              alt={project.images[0].alt}
+              width={Math.round(project.dimensions.width * 80)}
+              height={Math.round(project.dimensions.height * 80)}
+            />
           </FadeIn>
 
           {/* Info sidebar */}
@@ -94,14 +90,21 @@ export default async function ProjectPage({ params }: Props) {
               </div>
 
               {/* Status */}
-              <span
-                className={cn(
-                  'inline-block text-[10px] font-medium uppercase tracking-widest px-3 py-1.5 border rounded-sm',
-                  getStatusColor(project.status)
+              <div className="flex items-center gap-2 flex-wrap">
+                <span
+                  className={cn(
+                    'inline-block text-[10px] font-medium uppercase tracking-widest px-3 py-1.5 border rounded-sm',
+                    getStatusColor(project.status)
+                  )}
+                >
+                  {getStatusLabel(project.status)}
+                </span>
+                {project.status === 'sold' && (
+                  <span className="inline-block text-[10px] font-medium uppercase tracking-widest px-3 py-1.5 border rounded-sm text-blue-400 border-blue-400">
+                    Prints Available
+                  </span>
                 )}
-              >
-                {getStatusLabel(project.status)}
-              </span>
+              </div>
 
               {/* Description */}
               {project.description && (
