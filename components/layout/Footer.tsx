@@ -23,7 +23,7 @@ export default function Footer() {
               </a>
             )}
             <Link
-              href="/contact"
+              href="/acquire"
               className="text-sm text-secondary hover:text-primary transition-colors"
             >
               Contact

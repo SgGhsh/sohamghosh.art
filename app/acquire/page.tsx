@@ -76,28 +76,29 @@ function InquiryModal({ work, onClose }: { work: Project; onClose: () => void })
 }
 
 export default function AcquirePage() {
-  const [form, setForm]         = useState({ name: '', email: '', artwork: '', message: '' });
-  const [status, setStatus]     = useState<'idle' | 'sending' | 'sent'>('idle');
+  const [form, setForm]         = useState({ name: '', artwork: '', message: '' });
   const [selected, setSelected] = useState<Project | null>(null);
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    
+
     const subject = encodeURIComponent(
-      `Inquiry from ${form.name}${form.artwork ? ` - ${form.artwork}` : ''}`
+      form.artwork ? `${form.name} - ${form.artwork} Inquiry` : `${form.name} - Inquiry`
     );
-    
+
     const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}${form.artwork ? `\nArtwork: ${form.artwork}` : ''}\n\nMessage:\n${form.message}`
+      [
+        `Name: ${form.name}`,
+        form.artwork ? `Piece: ${form.artwork}` : '',
+        '',
+        `Message:`,
+        form.message,
+      ]
+        .filter((line, i, arr) => !(line === '' && arr[i - 1] === ''))
+        .join('\n')
     );
-    
-    const mailtoLink = `mailto:${siteConfig.email}?subject=${subject}&body=${body}`;
-    
-    window.location.href = mailtoLink;
-    
-    setStatus('sent');
-    setForm({ name: '', email: '', artwork: '', message: '' });
-    setTimeout(() => setStatus('idle'), 2000);
+
+    window.location.href = `mailto:${siteConfig.email}?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -223,21 +224,8 @@ export default function AcquirePage() {
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="email" className="block text-xs uppercase tracking-[0.2em] text-secondary font-medium">
-                    Email
-                  </label>
-                  <input
-                    id="email" name="email" type="email" required
-                    value={form.email}
-                    onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    placeholder="your@email.com"
-                    className="w-full border-b border-border bg-transparent py-3 text-primary placeholder:text-secondary/50 focus:outline-none focus:border-accent transition-colors font-light"
-                  />
-                </div>
-
-                <div className="space-y-2">
                   <label htmlFor="artwork" className="block text-xs uppercase tracking-[0.2em] text-secondary font-medium">
-                    Artwork <span className="normal-case tracking-normal text-secondary/60">(optional)</span>
+                    Piece <span className="normal-case tracking-normal text-secondary/60">(optional)</span>
                   </label>
                   <div className="relative">
                     <select
@@ -247,10 +235,10 @@ export default function AcquirePage() {
                       className="w-full border-b border-border bg-transparent py-3 text-primary focus:outline-none focus:border-accent transition-colors font-light appearance-none pr-6 cursor-pointer"
                     >
                       <option value="">Select a work…</option>
-                      {availableWorks.map((w) => (
+                      {works.map((w) => (
                         <option key={w.id} value={w.title}>{w.title}</option>
                       ))}
-                      <option value="other">Other / Not listed</option>
+                      <option value="Other / Not listed">Other / Not listed</option>
                     </select>
                     <span className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-secondary/50 text-xs">▾</span>
                   </div>
@@ -269,20 +257,14 @@ export default function AcquirePage() {
                   />
                 </div>
 
-                <div className="flex items-center gap-4 pt-2">
+                <div className="pt-2">
                   <Button
                     type="submit"
-                    disabled={status !== 'idle'}
                     size="lg"
-                    className="font-light tracking-widest text-xs uppercase disabled:opacity-50"
+                    className="font-light tracking-widest text-xs uppercase"
                   >
-                    {status === 'sending' ? 'Sending…' : status === 'sent' ? 'Sent ✓' : 'Send Message'}
+                    Send Message
                   </Button>
-                  {status === 'sent' && (
-                    <p className="text-sm text-accent font-light">
-                      Thank you — I&apos;ll be in touch soon.
-                    </p>
-                  )}
                 </div>
               </form>
             </FadeIn>
