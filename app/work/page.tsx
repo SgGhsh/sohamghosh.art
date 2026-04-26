@@ -17,10 +17,10 @@ export default function WorkPage() {
       <Container>
         <FadeIn>
           <p className="font-sans text-[10px] uppercase tracking-[0.3em] text-secondary mb-2">
-            Complete Collection
+            Catalogue
           </p>
           <h1 className="font-serif text-4xl md:text-5xl font-semibold text-primary tracking-tight">
-            All Collections
+            Complete Collection
           </h1>
           <p className="mt-2 text-sm text-secondary font-light">
             {works.length} pieces

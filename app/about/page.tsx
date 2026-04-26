@@ -27,7 +27,6 @@ export default function AboutPage() {
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover grayscale"
-                priority
               />
             </div>
           </FadeIn>
@@ -39,7 +38,7 @@ export default function AboutPage() {
               {/* Page heading — moved here from top */}
               <div>
                 <h1 className="font-serif text-4xl md:text-5xl font-semibold text-primary tracking-tight">
-                  {aboutConfig.title}
+                  The Artist&apos;s Profile
                 </h1>
               </div>
 
