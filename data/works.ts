@@ -154,7 +154,7 @@ This is hysteria as silence that refuses to leave.`,
     medium: 'Mixed Media on Canvas',
     dimensions: { width: 16, height: 22, unit: 'in' },
     year: 2025,
-    status: 'available',
+    status: 'sold',
     images: [
       {
         thumbnail: "/images/work/Lien d\u2019amour.jpg",
