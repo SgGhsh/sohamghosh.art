@@ -56,8 +56,8 @@ export default function Header() {
                 <Image
                   src="/images/sohamghoshsignature.png"
                   alt="Soham Ghosh"
-                  width={180}
-                  height={60}
+                  width={170}
+                  height={68}
                   priority
                   className="h-17 w-auto object-contain mix-blend-multiply"
                 />

@@ -121,7 +121,7 @@ export default function ZoomableImage({ src, alt, width, height }: ZoomableImage
         className="w-full bg-muted border border-border cursor-zoom-in"
         onClick={() => setOpen(true)}
       >
-        <Image src={src} alt={alt} width={800} height={600} className="w-full h-auto" priority />
+        <Image src={src} alt={alt} width={width} height={height} className="w-full h-auto" />
       </div>
 
       <AnimatePresence>
