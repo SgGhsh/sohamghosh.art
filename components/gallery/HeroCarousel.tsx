@@ -34,28 +34,28 @@ export default function HeroCarousel() {
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
-        {/* Background images — cross-fade */}
-        <AnimatePresence mode="sync" initial={false}>
+        {/* Background images — all pre-rendered, cross-faded with opacity */}
+        {SLIDES.map((s, i) => (
           <motion.div
-            key={index}
-            initial={{ opacity: 0, scale: 1.03 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0 }}
+            key={i}
+            initial={false}
+            animate={{ opacity: i === index ? 1 : 0 }}
             transition={{ duration: 1.4, ease: [0.4, 0, 0.2, 1] }}
             className="absolute inset-0"
+            style={{ zIndex: i === index ? 1 : 0 }}
           >
             <Link href="/work" className="block w-full h-full cursor-pointer">
               <Image
-                src={slide.src}
-                alt={slide.alt}
+                src={s.src}
+                alt={s.alt}
                 fill
-                priority={index === 0}
+                loading="eager"
                 sizes="100vw"
                 className="object-cover object-center"
               />
             </Link>
           </motion.div>
-        </AnimatePresence>
+        ))}
 
         {/* Gradient overlay - only on desktop */}
         <div className="hidden md:block absolute inset-0 bg-linear-to-b from-black/50 via-black/10 to-black/75 z-10" />
