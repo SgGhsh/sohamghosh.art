@@ -12,34 +12,36 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <section className="w-full flex-1 flex flex-col py-8 md:py-10">
-      <Container className="flex-1 flex flex-col">
+    <section className="w-full h-[calc(100dvh-5rem)] overflow-hidden flex flex-col md:py-10">
+      <Container className="h-full flex flex-col min-h-0">
 
-        <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+        <div className="flex-1 min-h-0 flex flex-col md:grid md:grid-cols-2 md:gap-20">
 
           {/* Portrait */}
-          <FadeIn direction="left">
-            <div className="relative w-full aspect-3/4 overflow-hidden bg-muted border border-border">
+          <FadeIn direction="left" className="shrink-0 h-2/5 md:h-auto">
+            <div className="relative w-full h-full overflow-hidden bg-background
+                            md:h-full md:bg-muted md:border md:border-border">
               <Image
                 src="/images/aboutme.jpeg"
                 alt={aboutConfig.name}
                 fill
                 priority
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover grayscale"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-contain grayscale md:object-cover"
               />
             </div>
           </FadeIn>
 
-          {/* Right column */}
-          <FadeIn direction="right" delay={0.1}>
-            <div className="space-y-6">
+          {/* Text column — independently scrollable */}
+          <div className="flex-1 min-h-0 overflow-y-auto pr-2">
+            <FadeIn direction="right" delay={0.1}>
+              <div className="space-y-6 py-4 md:py-0">
 
-              <h1 className="font-serif text-4xl md:text-5xl font-semibold text-primary tracking-tight">
-                The Artist&apos;s Profile
-              </h1>
+                <h1 className="font-serif text-4xl md:text-5xl font-semibold text-primary tracking-tight">
+                  The Artist&apos;s Profile
+                </h1>
 
-              <AboutBody>
+                <AboutBody>
 
                 <div className="prose prose-sm max-w-none">
                   <p>
@@ -155,8 +157,9 @@ export default function AboutPage() {
 
               </AboutBody>
 
-            </div>
-          </FadeIn>
+              </div>
+            </FadeIn>
+          </div>
 
         </div>
       </Container>
