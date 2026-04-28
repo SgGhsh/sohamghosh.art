@@ -215,9 +215,10 @@ function AcquireContent() {
                                   <Image
                                     src={work.images[0].thumbnail}
                                     alt={work.images[0].alt}
-                                    width={Math.round(width * 20)}
-                                    height={Math.round(height * 20)}
-                                    sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 22vw"
+                                    width={Math.min(80, Math.round(width * 20))}
+                                    height={Math.min(80, Math.round(height * 20))}
+                                    loading="lazy"
+                                    sizes="25vw"
                                     className="w-full h-auto block transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-[1.02]"
                                   />
                                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors duration-300" />
