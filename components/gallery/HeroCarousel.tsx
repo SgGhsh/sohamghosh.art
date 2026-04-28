@@ -48,6 +48,7 @@ export default function HeroCarousel() {
                 src={s.src}
                 alt={s.alt}
                 fill
+                priority={i === 0}
                 loading="eager"
                 sizes="100vw"
                 className="object-cover object-center"

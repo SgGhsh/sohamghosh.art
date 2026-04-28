@@ -10,12 +10,13 @@ interface ZoomableImageProps {
   alt: string;
   width: number;
   height: number;
+  priority?: boolean;
 }
 
 const MIN_SCALE = 1;
 const MAX_SCALE = 5;
 
-export default function ZoomableImage({ src, alt, width, height }: ZoomableImageProps) {
+export default function ZoomableImage({ src, alt, width, height, priority = false }: ZoomableImageProps) {
   const [open, setOpen] = useState(false);
   const [scale, setScale] = useState(1);
   const [pos, setPos] = useState({ x: 0, y: 0 });
@@ -121,7 +122,15 @@ export default function ZoomableImage({ src, alt, width, height }: ZoomableImage
         className="w-full bg-muted border border-border cursor-zoom-in"
         onClick={() => setOpen(true)}
       >
-        <Image src={src} alt={alt} width={width} height={height} className="w-full h-auto" />
+        <Image
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          priority={priority}
+          sizes="(max-width: 1024px) 100vw, 60vw"
+          className="w-full h-auto"
+        />
       </div>
 
       <AnimatePresence>
@@ -176,8 +185,9 @@ export default function ZoomableImage({ src, alt, width, height }: ZoomableImage
                 alt={alt}
                 width={width}
                 height={height}
+                sizes="90vw"
                 className="max-w-[90vw] max-h-[90vh] w-auto h-auto object-contain pointer-events-none"
-                             />
+              />
             </motion.div>
           </motion.div>
         )}

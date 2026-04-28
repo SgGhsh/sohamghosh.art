@@ -2,7 +2,6 @@ import Link from 'next/link';
 import Image from "next-image-export-optimizer";
 import { Button } from '@/components/ui/Button';
 import HeroCarousel from '@/components/gallery/HeroCarousel';
-import signatureImage from '@/public/images/sohamghoshsignature.png';
 
 export default function Home() {
 
@@ -31,7 +30,7 @@ export default function Home() {
         {/* Signature */}
         <div className="w-full max-w-120 pl-12 md:max-w-xs">
           <Image
-            src={signatureImage}
+            src="/images/sohamghoshsignature.png"
             alt="Soham Ghosh"
             width={240}
             height={80}

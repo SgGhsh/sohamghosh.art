@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Image from "next-image-export-optimizer";
-import aboutmeImage from '../../public/images/aboutme.jpeg';
 import { aboutConfig } from '@/data/about';
 import Container from '@/components/ui/Container';
 import { FadeIn } from '@/components/ui/FadeIn';
@@ -22,9 +21,10 @@ export default function AboutPage() {
           <FadeIn direction="left">
             <div className="relative w-full aspect-3/4 overflow-hidden bg-muted border border-border">
               <Image
-                src={aboutmeImage}
+                src="/images/aboutme.jpeg"
                 alt={aboutConfig.name}
                 fill
+                priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover grayscale"
               />

@@ -58,6 +58,7 @@ export default async function ProjectPage({ params }: Props) {
               alt={project.images[0].alt}
               width={Math.round(project.dimensions.width * 80)}
               height={Math.round(project.dimensions.height * 80)}
+              priority
             />
           </FadeIn>
 
